@@ -16,7 +16,9 @@ def main():
     print(twoSum(testList1,testTarget1))
     print(twoSum(testList2,testTarget2))
     print(twoSum(testList3,testTarget3))
-  
+
+# O(n) total time to run, traverse list of n elements once
+# O(n) space complexity, dictionary stores at most n elements
 def twoSum(nums, target):
     numberMap = {}
     for i in range(len(nums)):
