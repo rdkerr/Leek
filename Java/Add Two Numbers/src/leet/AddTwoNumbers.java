@@ -16,6 +16,8 @@ public class AddTwoNumbers {
 		addTwoNumbers(l1,l2);
 	}
 	
+	// O(N) total time where N is the length of the longest list
+	// O(N) space complexity, at most need N + 1 nodes for return list
 	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode itr1 = l1, itr2 = l2, l3, temp;
 		boolean carryBit = false;
@@ -46,8 +48,12 @@ public class AddTwoNumbers {
 				carryBit = false;
 			}
 			solution = Integer.toString(total) + solution;
-			itr1 = itr1.next;
-			itr2 = itr2.next;
+			if(itr1!=null) {
+				itr1 = itr1.next;
+			}
+			if(itr2!=null) {
+				itr2 = itr2.next;
+			}
 		}
 		if(carryBit) {
 			solution = "1" + solution;
