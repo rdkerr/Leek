@@ -2,6 +2,6 @@ package leet;
 
 public class ListNode {
 	int val;
-	ListNode next;
+	ListNode next = null;
 	ListNode(int x) { val = x; }
 }
