@@ -42,7 +42,7 @@ public class AddTwoNumbers {
 			solution = "1" + solution;
 		}
 		System.out.println(solution);
-		l3 = new ListNode(Integer.parseInt(solution.substring(solution.length()-1,solution.length())));
+		l3 = new ListNode(Integer.parseInt(solution.substring(0,1)));
 		for (int i = solution.length()-1 ; i > 0 ; i--) {
 			
 		}
