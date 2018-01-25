@@ -3,9 +3,8 @@ package leet;
 public class AddTwoNumbers {
 
 	public static void main(String[] args) {
-		System.out.println("HI");
-		ListNode l1 = new ListNode(2);
-		ListNode temp1 = new ListNode(4);
+		ListNode l1 = new ListNode(1);
+		ListNode temp1 = new ListNode(8);
 		ListNode temp2 = new ListNode(3);
 		l1.next = temp1;
 		temp1.next = temp2;
@@ -21,9 +20,21 @@ public class AddTwoNumbers {
 		ListNode itr1 = l1, itr2 = l2, l3, temp;
 		boolean carryBit = false;
 		String solution = "";
-		// Sample strings are same length
-		while(itr1 != null) {
-			int total = itr1.val + itr2.val;
+		while(itr1 != null || itr2 != null) {
+			int val1, val2;
+			if(itr1 == null) {
+				val1 = 0;
+			}
+			else {
+				val1 = itr1.val;
+			}
+			if(itr2 == null) {
+				val2 = 0;
+			}
+			else {
+				val2 = itr2.val;
+			}
+			int total = val1 + val2;
 			if(carryBit) {
 				total++;
 				}
@@ -43,10 +54,12 @@ public class AddTwoNumbers {
 		}
 		System.out.println(solution);
 		l3 = new ListNode(Integer.parseInt(solution.substring(0,1)));
-		for (int i = solution.length()-1 ; i > 0 ; i--) {
-			
+		for (int i = 1 ; i < solution.length() ; i ++) {
+			temp = new ListNode(Integer.parseInt(solution.substring(i,i+1)));
+			temp.next = l3;
+			l3 = temp;
 		}
-		return null;
+		return l3;
 	}
 
 }
