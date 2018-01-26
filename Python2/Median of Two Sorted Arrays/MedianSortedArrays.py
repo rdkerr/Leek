@@ -4,8 +4,8 @@
 #should be O(log (m+n)).
 
 def main():
-    nums1 = [1,4,7,8,15,18,21]
-    nums2 = [3,6,11,13,14]
+    nums1 = [1,4]
+    nums2 = [2,3]
     print findMedianSortedArrays(nums1,nums2)
 
 def findMedianSortedArrays(nums1, nums2):
@@ -39,7 +39,7 @@ def findMedianSortedArrays(nums1, nums2):
         print yLeft, yRight
         #correct partition
         if (xLeft <= yRight and yLeft <= xRight):
-            print "HMM"
+            return (max(xLeft,yLeft) + min(xRight, yRight))/2.0
         elif xLeft > yRight:
             back = xPart - 1
         else:
