@@ -5,7 +5,7 @@
 
 def main():
     nums1 = [1,4]
-    nums2 = [2,3]
+    nums2 = [2,3,5]
     print findMedianSortedArrays(nums1,nums2)
 
 def findMedianSortedArrays(nums1, nums2):
@@ -39,7 +39,10 @@ def findMedianSortedArrays(nums1, nums2):
         print yLeft, yRight
         #correct partition
         if (xLeft <= yRight and yLeft <= xRight):
-            return (max(xLeft,yLeft) + min(xRight, yRight))/2.0
+            if (n + m) % 2 == 0:
+                return (max(xLeft,yLeft) + min(xRight, yRight))/2.0
+            else:
+                return max(xLeft,yLeft)/1.0
         elif xLeft > yRight:
             back = xPart - 1
         else:
