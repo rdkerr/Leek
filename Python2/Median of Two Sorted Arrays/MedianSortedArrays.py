@@ -14,10 +14,8 @@ def findMedianSortedArrays(nums1, nums2):
     front = 0
     back = n
     while (front <= back):
-        print front, back
         xPart = (front + back) / 2
         yPart = (n + m + 1)/2 - xPart
-        print xPart, yPart
         #Check numbers around partitions
         if xPart == 0:
             xLeft = float('-inf')
@@ -35,8 +33,6 @@ def findMedianSortedArrays(nums1, nums2):
             yRight = float('inf')
         else:
             yRight = nums2[yPart]
-        print xLeft, xRight
-        print yLeft, yRight
         #correct partition
         if (xLeft <= yRight and yLeft <= xRight):
             if (n + m) % 2 == 0:
@@ -47,11 +43,6 @@ def findMedianSortedArrays(nums1, nums2):
             back = xPart - 1
         else:
             front = xPart + 1
-        a = raw_input("...")
-            
-        
-    
-    return 0
-    
+
 if __name__ == "__main__":
     main()
