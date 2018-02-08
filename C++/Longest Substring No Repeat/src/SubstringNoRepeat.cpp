@@ -11,12 +11,14 @@
 // T(i) = T(i-1) + 1 : if si not found before
 // T(i) = i - k for some sk = si
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int lengthOfLongestSubstring(string s) {
 	int n = s.length();
-	       if (n == 0) return 0;
-	        int T[n];
+	    if (n == 0) return 0;
+
+	    int *T = new int[n];
 	    if (n > 0){
 		T[0] = 1;
 	    }
@@ -28,15 +30,16 @@ int lengthOfLongestSubstring(string s) {
 			}
 			if (j < 0) {
 				T[i] = T[i-1]+1;
-				cout << "IF:" << s[i];
+				cout << "IF:" << s[i] << endl;
 				if (T[i] > max ) {
 					max = T[i];
 
 				}
 			}
 			else {
-				T[i] = i-(j+1);
-				cout << "FF:" << s[i];
+				T[i] = min(i-j,T[i-1]+1);
+
+				cout << "FF: " << i << " : " << j << " : " << s[i] << endl;
 				if (T[i] > max ) {
 					max = T[i];
 
@@ -47,7 +50,7 @@ int lengthOfLongestSubstring(string s) {
 }
 
 int main() {
-	string x = "pwwkew";
+	string x = "abba";
 	int y;
 	y = lengthOfLongestSubstring(x);
 	cout << y << endl;
