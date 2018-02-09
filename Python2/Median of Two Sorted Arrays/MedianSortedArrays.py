@@ -11,7 +11,9 @@ def main():
 
 def findMedianSortedArrays(nums1, nums2):
     if len(nums1) > len(nums2):
-        return findMedianSortedArrays(nums2,nums1)
+        nums3 = nums1
+        nums1 = nums2
+        nums2 = nums3
     n = len(nums1)
     m = len(nums2)
 
