@@ -37,7 +37,8 @@ char* longestPalindrome(char* s) {
 		}
 	}
 
-	/**for (int w = 2 ; w < n ; w ++ ) {
+	/**O(n3)
+	 * for (int w = 2 ; w < n ; w ++ ) {
 		for (int i = 0 ; i < n - w; i ++ ) {
 			int j = i + w;
 			for (int l = i ; l < j - 1; l ++) {
@@ -55,7 +56,9 @@ char* longestPalindrome(char* s) {
 			}
 		}
 	}**/
-	for (int w = 2 ; w <= n - 1 ; w ++) {
+
+	/** O(n2)
+	 * for (int w = 2 ; w <= n - 1 ; w ++) {
 		for (int i = 0 ; i < n - w ; i ++) {
 			int j = i + w;
 			if (s[i] == s[j] && T[i+1][j-1] > 0) {
@@ -70,7 +73,7 @@ char* longestPalindrome(char* s) {
 				T[i][j] = 0;
 			}
 		}
-	}
+	}**/
 	for (int i = 0 ; i < n ; i ++) {
 		for (int j = 0 ; j < n ; j ++) {
 			printf("%d", T[i][j]);
