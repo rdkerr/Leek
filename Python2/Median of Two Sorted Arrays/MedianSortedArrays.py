@@ -8,7 +8,7 @@ def main():
     nums2 = [1,2]
     print findMedianSortedArrays(nums1,nums2)
 
-
+#O(log(m+n)) space O(1)
 def findMedianSortedArrays(nums1, nums2):
     if len(nums1) > len(nums2):
         nums3 = nums1
