@@ -61,8 +61,6 @@ char* longestPalindrome(char* s) {
 				max = T[i];
 				maxI = i;
 			}
-			printf("%d : %d : %c\n", i, T[i], r[i]);
-			int zz = T[i];
 		}
 	/** Some errors in test cases
 	//Tushar Roy algorithm
@@ -207,7 +205,6 @@ char* longestPalindrome(char* s) {
 		printf("\n");
 	}
 	*/
-	printf("%d : %d", max, maxI);
 	char *res = (char*)malloc((max+1)*sizeof(char));
 	for (int i = (maxI/2) - (max/2),index = 0 ; index < max; i++, index++) {
 			res[index] = s[i];
