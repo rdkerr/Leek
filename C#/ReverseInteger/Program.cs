@@ -8,6 +8,7 @@ namespace ReverseInteger {
             Console.WriteLine(Program.Reverse(-2147483648));
         }
         
+        //O(logx)
         public static int Reverse(int x) {
         	int res = 0;
         	int sign = 1;
