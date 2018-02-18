@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #Determine whether an integer is a palindrome. Do this without extra space.
 class Solution:
+    # O(logx)
     def isPalindrome(self, x):
         if x < 0:
             return False
