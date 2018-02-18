@@ -18,7 +18,7 @@ class Solution:
             if left != right:
                 return False
             x%=size
-            x/=10
+            x= (int)(x / 10)
             size/=100
             powerOfTen-=2
         return True
