@@ -1,5 +1,6 @@
 # @param {String} str
 # @return {Integer}
+#O(n) for match 
 def my_atoi(str)
   stripped = str.lstrip
   userInput = stripped.match( /[+-]?\d+/)
