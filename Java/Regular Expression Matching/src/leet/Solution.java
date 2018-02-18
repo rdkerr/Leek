@@ -18,7 +18,12 @@ public class Solution {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(isMatch("a", "a"));
+		System.out.println(isMatch("aa", "a"));			//false
+		System.out.println(isMatch("aaa", "aa"));		//false
+		System.out.println(isMatch("aa", "a*"));		//true
+		System.out.println(isMatch("aa", ".*"));		//true
+		System.out.println(isMatch("ab", "."));			//false
+		System.out.println(isMatch("aab", "c*a*b"));	//true
 
 	}
 
