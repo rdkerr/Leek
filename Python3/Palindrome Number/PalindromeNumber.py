@@ -11,10 +11,10 @@ class Solution:
             size*=10           
         left = x
         right = 0
-        print(powerOfTen,size)
         while powerOfTen > 1:
-            left = x / size
-            right = x % 10
+            left = (int)(x / size)
+            right = (int)(x % 10)
+            print(powerOfTen,size,left,right,x)
             if left != right:
                 return False
             x%=size
@@ -29,6 +29,10 @@ def main():
     print(test.isPalindrome(13))
     print(test.isPalindrome(131))
     print(test.isPalindrome(13154))
+    print(test.isPalindrome(-131))
+    print(test.isPalindrome(12321))
+    print(test.isPalindrome(1312131))
+    print(test.isPalindrome(123456789))
 
 
 if __name__ == "__main__":
