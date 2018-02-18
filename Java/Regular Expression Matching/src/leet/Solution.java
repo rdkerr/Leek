@@ -20,6 +20,7 @@ public class Solution {
 		System.out.println(isMatch("aa", "a*"));
 	}
 
+	// O(n^2) 
 	public static boolean isMatch(String s, String p) {
 		if(s == null || p == null) {
             return false;
