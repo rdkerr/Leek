@@ -21,10 +21,14 @@ public class Solution {
 	}
 
 	public static boolean isMatch(String s, String p) {
+		if(s == null || p == null) {
+            return false;
+        }
 		boolean [][]T = new boolean[s.length()+1][p.length()+1];
 		T[0][0] = true;
 		for(int j = 1 ; j < p.length() ; j++) {
-			if(p.charAt(j)=='*') {
+			System.out.println("p: " + p.charAt(j));
+			if(p.charAt(j)=='*' && T[0][(j+1)-2]) {
 				T[0][j+1] = true;
 			}
 		}

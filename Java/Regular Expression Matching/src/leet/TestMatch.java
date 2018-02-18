@@ -73,4 +73,9 @@ class TestMatch {
 	void test14() throws Exception {
 		assertEquals(true,Solution.isMatch("aa", ".a"));			//true
 	}
+	
+	@Test
+	void test15() throws Exception {
+		assertEquals(false,Solution.isMatch("a", "ab*a"));			//true
+	}
 }
