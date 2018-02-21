@@ -38,7 +38,7 @@ int romanToInt(char *s) {
 	while(*s) {
 		int current = getValue(s[0]);
 		int next = getValue(s[1]);
-		if (current > next) {
+		if (current >= next) {
 			res += current;
 		}
 		else {
