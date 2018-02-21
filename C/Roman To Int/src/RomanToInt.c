@@ -24,10 +24,10 @@ int romanToInt(char* s) {
 		char current = s[i];
 		char next = s[i+1];
 		nCounter = cCounter;
-		while(current != roman[cCounter]) {
+		while(current != roman[cCounter] && cCounter > 0) {
 			cCounter--;
 		}
-		while(next != roman[nCounter]) {
+		while(next != roman[nCounter]&& nCounter > 0) {
 			nCounter--;
 		}
 		if (nCounter > cCounter) {
@@ -48,5 +48,6 @@ int main(void) {
 	printf("%d\n", romanToInt("IX"));
 	printf("%d\n", romanToInt("I"));
 	printf("%d\n", romanToInt("MMMCMXCIX"));
+	printf("%d\n", romanToInt("DCXXI"));
 	return EXIT_SUCCESS;
 }
