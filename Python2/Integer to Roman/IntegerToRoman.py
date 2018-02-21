@@ -7,6 +7,19 @@ class Solution(object):
         :type num: int
         :rtype: str
         """
+        thousands = ["", "M", "MM", "MMM"]
+        hundreds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+        tens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+        ones = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+        return thousands[num/1000] + hundreds[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];
+
+    
+    #Slower
+    def slowerIntToRoman(self, num):
+        """
+        :type num: int
+        :rtype: str
+        """
         res = ""
         roman =  ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
         values = [1,   4,     5,    9,   10,  40,   50,  90,  100,  400, 500, 900, 1000]
