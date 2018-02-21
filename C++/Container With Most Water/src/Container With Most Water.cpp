@@ -10,6 +10,7 @@
 #include <vector>
 using namespace std;
 
+// O(n)
 int maxArea(vector<int>& height) {
 	int begin = 0;
 	int end = height.size() - 1;
@@ -18,7 +19,6 @@ int maxArea(vector<int>& height) {
 		int length = min(height[begin], height[end]);
 		int width = end - begin;
 		area = max(area, length*width);
-		cout <<height[begin] << endl;
 		while (height[begin] <= length && begin < end) {
 			begin++;
 		}
