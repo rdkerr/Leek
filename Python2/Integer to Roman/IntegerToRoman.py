@@ -7,6 +7,20 @@ class Solution(object):
         :type num: int
         :rtype: str
         """
+        res = ""
+        roman =  ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
+        values = [1,   4,     5,    9,   10,  40,   50,  90,  100,  400, 500, 900, 1000]
+        for r, v in zip(reversed(roman), reversed(values)):
+            res += num//v * r
+            num %= v
+        return res
+    
+    #Too slow
+    def slowIntToRoman(self, num):
+        """
+        :type num: int
+        :rtype: str
+        """
         roman =  ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
         values = [1,   4,     5,    9,   10,  40,   50,  90,  100,  400, 500, 900, 1000]
         res = ""
