@@ -12,32 +12,37 @@ public class Solution {
         }
         
         public static IList<IList<int>> ThreeSum(int[] nums) {
+        IList<IList<int>> res = new List<IList<int>>();
         	Array.Sort(nums);
-			for(int j = 0 ; j < nums.Length ; j++ ) {
-				Console.WriteLine(nums[j]);
-			}
         	int i = 0;
         	while (i < nums.Length && nums[i] <= 0) {
         		int complement = 0 - nums[i];
         		int begin = i + 1;
         		int end = nums.Length - 1;
-				Console.WriteLine(complement + " " + begin + " " + end + "\n\n");
+				Console.WriteLine(i + " " + complement + " " + begin + " " + end + "\n\n");
         		while (begin < end) {
         			int sum = nums[begin] + nums[end];
 					Console.WriteLine(sum + " " + nums[begin] + " " + nums[end]);
-        			if (sum > complement) {
+        			if (sum < complement) {
         				begin++;
         			}
-        			else if (sum < complement) {
+        			else if (sum > complement) {
         				end--;
         			}
         			else {
-        				Console.WriteLine("FOUND");
+        				Console.WriteLine(nums[i] + "\t" + nums[begin] + "\t" + nums[end]);
+        				IList<int> sol = new List<int>();
+        				sol.Add(nums[i]);
+        				sol.Add(nums[begin]);
+        				sol.Add(nums[end]);
+        				res.Add(sol);
+        				begin++;
+        				end--;
         			}
         		}
 				i++;
         	}
-        	return null;
+        	return res;
    		}
    	}
 }
