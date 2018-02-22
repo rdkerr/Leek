@@ -7,7 +7,14 @@ public class Solution {
 	public static void Main(string[] args) {
         	int[] nums = {-1,0,1,2,-1,4};
         	 Console.WriteLine("START");
-            Solution.ThreeSum(nums);
+            IList<IList<int>> res = Solution.ThreeSum(nums);
+            foreach(var row in res) {
+            	string temp = "";
+            	foreach(var elem in row) {
+            		temp += elem.ToString();
+            	}
+            	Console.WriteLine(temp);
+			}
             Console.WriteLine("DONE");
         }
         
@@ -36,8 +43,12 @@ public class Solution {
         				sol.Add(nums[begin]);
         				sol.Add(nums[end]);
         				res.Add(sol);
-        				begin++;
-        				end--;
+        				while (nums[begin]==sol[1] && begin < end) {
+        					begin++;
+        				}
+        				while (nums[begin]==sol[2] && begin < end) {
+        					end--;
+        				}
         			}
         		}
 				i++;
