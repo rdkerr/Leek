@@ -1,21 +1,21 @@
 # Leet Code Programming Challenges
 ## Programming Language Cycle
-1. ***Python3***
+1. Python3
 2. Java
 3. C++
 4. Python2
 5. C
 6. Javascript
 7. C#
-8. Ruby
+8. ***Ruby***
 
-***Last Language Used***, next language used for current problem
+***Last Language Used***, (problem number % 8) + 1 = Language Used
 
 ## Last Problem Completed
-9 - Palindrome Number    
+16 - 3Sum Closest  
 
 ## Current Problem
-10 - Regular Expression Matching    
+17 - Letter Combinations of a Phone Number        
 
 ## Completed Problems
 1. Two Sum 
@@ -27,3 +27,10 @@
 7.	Reverse Integer 	
 8.	String to Integer (atoi)
 9.	Palindrome Number 
+10. Regular Expression Matching 
+11. Container With Most Water 
+12. Integer to Roman
+13. Roman to Integer  
+14. Longest Common Prefix  
+15. 3Sum
+16. 3Sum Closest
