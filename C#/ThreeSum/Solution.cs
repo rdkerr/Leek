@@ -5,7 +5,7 @@ namespace ThreeSum {
 
 public class Solution {
 	public static void Main(string[] args) {
-        	int[] nums = {-1,0,1,2,-1,4};
+        	int[] nums = {0,0,0};
         	 Console.WriteLine("START");
             IList<IList<int>> res = Solution.ThreeSum(nums);
             foreach(var row in res) {
@@ -22,14 +22,15 @@ public class Solution {
         IList<IList<int>> res = new List<IList<int>>();
         	Array.Sort(nums);
         	int i = 0;
+            if (nums.Length < 3) {
+                return res;
+            }
         	while (i < nums.Length && nums[i] <= 0) {
         		int complement = 0 - nums[i];
         		int begin = i + 1;
         		int end = nums.Length - 1;
-				Console.WriteLine(i + " " + complement + " " + begin + " " + end + "\n\n");
         		while (begin < end) {
         			int sum = nums[begin] + nums[end];
-					Console.WriteLine(sum + " " + nums[begin] + " " + nums[end]);
         			if (sum < complement) {
         				begin++;
         			}
@@ -37,7 +38,6 @@ public class Solution {
         				end--;
         			}
         			else {
-        				Console.WriteLine(nums[i] + "\t" + nums[begin] + "\t" + nums[end]);
         				IList<int> sol = new List<int>();
         				sol.Add(nums[i]);
         				sol.Add(nums[begin]);
@@ -51,6 +51,9 @@ public class Solution {
         				}
         			}
         		}
+        		while(i < nums.Length-1 && nums[i] == nums[i+1]) {
+					i++;
+				}
 				i++;
         	}
         	return res;
