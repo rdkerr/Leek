@@ -1,6 +1,6 @@
 #!/usr/bin/python
 class Solution:
-    # 
+    # O(n^2) time complexity
     def letterCombinations(self, digits):
         if len(digits)==0:
             return []
