@@ -12,8 +12,11 @@ class Solution:
             size = len(letters[digit])
             temp = []
             for res in result:
-                for letter in letters[digit]:
-                    temp.append(res + letter)
+                temp.append(res + letters[digit][0])
+                temp.append(res + letters[digit][1])
+                temp.append(res + letters[digit][2])
+                if len(letters[digit]) > 3:
+                    temp.append(res + letters[digit][3])
             result = temp    
         return result
     
