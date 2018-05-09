@@ -4,20 +4,23 @@ import java.util.Stack;
 
 class Solution {
     public boolean isValid(String s) {
-    	Stack<String> parentheses = new Stack<>();
+    	Stack<Character> parentheses = new Stack<>();
     	for(int i = 0 ; i < s.length() ; i ++) {
-    		String current = s.substring(i,i+1);
-    		if(current.equals("{")) {
-    			parentheses.push("}");
+    		char current = s.charAt(i);
+    		if(current == '{') {
+    			parentheses.push('}');
     		}
-    		else if(current.equals("[")) {
-    			parentheses.push("]");
+    		else if(current == '[') {
+    			parentheses.push(']');
     		}
-    		else if(current.equals("(")) {
-    			parentheses.push(")");
+    		else if(current == '(') {
+    			parentheses.push(')');
+    		}
+    		else if(parentheses.isEmpty()) {
+    			return false;
     		}
     		else {
-    			if(current.equals(parentheses.peek())) {
+    			if(current == parentheses.peek()) {
     				parentheses.pop();
     			}
     			else {
