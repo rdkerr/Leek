@@ -21,8 +21,8 @@ public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 			listTwoIterator = listTwoIterator.next;
 		}
 		ListNode newListIterator = newHead;
-		while(listOneIterator != null) {
-			if(listTwoIterator == null || listOneIterator.val <= listTwoIterator.val) {
+		while(listOneIterator != null && listTwoIterator != null) {
+			if(listOneIterator.val <= listTwoIterator.val) {
 				newListIterator.next = listOneIterator;
 				listOneIterator = listOneIterator.next;
 				
@@ -33,7 +33,12 @@ public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 			}
 			newListIterator = newListIterator.next;
 		}
-		newListIterator.next = listTwoIterator;
+		if (listOneIterator == null) {
+			newListIterator.next = listTwoIterator;
+		}
+		else {
+			newListIterator.next = listOneIterator;
+		}
         return newHead;
     }
 
