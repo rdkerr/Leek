@@ -7,10 +7,11 @@
 5. C
 6. Javascript
 7. C#
-8. ***Ruby***
+8. Ruby
 
 ***Last Language Used***, (problem number % 8) + 1 = Language Used
-***Starting with 18 will focus on Java
+
+Starting with 18 will focus on Java
 
 ## Last Problem Completed
 16 - 3Sum Closest  
