@@ -7,9 +7,11 @@
 5. C
 6. Javascript
 7. C#
-8. ***Ruby***
+8. Ruby
 
 ***Last Language Used***, (problem number % 8) + 1 = Language Used
+
+Starting with 18 will focus on Java
 
 ## Last Problem Completed
 16 - 3Sum Closest  
@@ -34,3 +36,6 @@
 14. Longest Common Prefix  
 15. 3Sum
 16. 3Sum Closest
+17. Letter Combinations of a Phone Number 
+18. 4Sum    
+19. Remove Nth Node From End of List    
