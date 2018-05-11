@@ -2,7 +2,7 @@ package leet;
 
 public class Solution {
 	public ListNode swapPairs(ListNode head) {
-		if (head == null || head.next == null) {
+		if (head == null) {
 			return null;
 		}
 		if (head.next == null) {
@@ -12,17 +12,16 @@ public class Solution {
 		newHead.next = head.next;
 		ListNode first = head;
 		ListNode second = head.next;
-		ListNode previous = newHead;
 		while(first != null && second != null) {
-			previous = first;
-			first.next = second.next;
-			second.next = first;
-			first = first.next;
+			int temp = first.val;
+			first.val = second.val;
+			second.val = temp;
+			first = second.next;
 			if(first != null) {
 				second = first.next;
 			}
 		}
-		return newHead.next;
+		return head;
     }
 	
 	public static void main(String[] args) {
