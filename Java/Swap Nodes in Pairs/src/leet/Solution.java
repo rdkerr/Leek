@@ -1,7 +1,34 @@
 package leet;
 
 public class Solution {
+	
 	public ListNode swapPairs(ListNode head) {
+		if (head == null) {
+			return null;
+		}
+		if (head.next == null) {
+			return head;
+		}
+		ListNode newHead = new ListNode(0);
+		newHead.next = head.next;
+		ListNode first = head;
+		ListNode second = head.next;
+		newHead.next = second;
+		ListNode beforePair = newHead;
+		while(first != null && second != null) {
+			first.next = second.next;
+			second.next = first;
+			beforePair.next = second;
+			beforePair = second.next;
+			first = first.next;
+			if(first != null) {
+				second = first.next;
+			}
+		}
+		return newHead.next;
+    }
+	
+	public ListNode swapPairsByValue(ListNode head) {
 		if (head == null) {
 			return null;
 		}
