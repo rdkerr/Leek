@@ -9,15 +9,13 @@
 7. C#
 8. Ruby
 
-***Last Language Used***, (problem number % 8) + 1 = Language Used
+***Language Used***, (problem number % 8) + 1 = Language Used, 1-18
 
-Starting with 18 will focus on Java
+18 - 27 => JAVA
 
-## Last Problem Completed
-16 - 3Sum Closest  
 
 ## Current Problem
-17 - Letter Combinations of a Phone Number        
+24. Swap Nodes in Pairs       
 
 ## Completed Problems
 1. Two Sum 
@@ -39,3 +37,8 @@ Starting with 18 will focus on Java
 17. Letter Combinations of a Phone Number 
 18. 4Sum    
 19. Remove Nth Node From End of List    
+20. Valid Parentheses    		
+21.	Merge Two Sorted Lists    		
+22.	Generate Parentheses    		
+23.	Merge k Sorted Lists    		
+  
