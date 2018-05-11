@@ -2,20 +2,24 @@ package leet;
 
 public class Solution {
 	
-	 public ListNode mergeKLists(ListNode[] lists) {
-		 int length = lists.length;
-		 if (length == 0) {
+	public ListNode mergeKLists(ListNode[] lists) {
+		 if (lists == null || lists.length == 0) {
 			 return  null;
 		 }
-		 if (length == 1) {
-			 return lists[0];
-		 }
-		 ListNode newHead = mergeTwoLists(lists[0],lists[1]);
-		 for (int i = 2 ; i < length ; i ++) {
-			 newHead = mergeTwoLists(newHead,lists[i]);
-		 }
-		 return newHead;
-	 }
+		return merge(lists, 0 , lists.length - 1);
+	}
+	
+	public ListNode merge(ListNode[] lists, int beg, int end) {
+		if (beg > end) {
+			return null;
+		}
+		if (beg == end) {
+			return lists[beg];
+		}
+		ListNode firstHalf = merge(lists, beg, (beg+end)/2);
+		ListNode secondHalf = merge(lists, ((beg+end)/2) + 1, end);
+		return mergeTwoLists(firstHalf, secondHalf);
+	}
 	
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 		if(l1 == null) {
@@ -56,7 +60,22 @@ public class Solution {
 		}
         return newHead;
     }
-
+	/**Way too slow
+	 public ListNode mergeKLists(ListNode[] lists) {
+		 int length = lists.length;
+		 if (length == 0) {
+			 return  null;
+		 }
+		 if (length == 1) {
+			 return lists[0];
+		 }
+		 ListNode newHead = mergeTwoLists(lists[0],lists[1]);
+		 for (int i = 2 ; i < length ; i ++) {
+			 newHead = mergeTwoLists(newHead,lists[i]);
+		 }
+		 return newHead;
+	 }
+*/
 	public static void main(String[] args) {
 		ListNode a1 = new ListNode(-9);
     	ListNode a2 = new ListNode(3);
