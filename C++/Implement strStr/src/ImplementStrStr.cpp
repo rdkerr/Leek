@@ -15,27 +15,26 @@ public:
         if(needle == "") {
         	return 0;
         }
-        int index = 0;
-        for ( auto it = haystack.begin(); it < haystack.end(); ++it){
-        	auto it2 = needle.begin();
-        	if (*it == *it2) {
-        		auto tempIt = it;
-        		while (tempIt < haystack.end() && it2 < needle.end() && *it2 == *tempIt) {
-        			++tempIt;
-        			++it2;
+        if (haystack.size() < needle.size()) {
+        	return -1;
+        }
+        for (int i = 0 ; i <= haystack.size() - needle.size() ; i ++) {
+        	if(haystack[i]==needle[0]) {
+        		int j = 1;
+        		while (j < needle.size() && haystack[i+j] == needle[j]) {
+        			j++;
         		}
-        		if(it2==needle.end()) {
-        			return index;
+        		if (j== needle.size()) {
+        			return i;
         		}
         	}
-        	index++;
         }
         return -1;
     }
 };
 
 int main() {
-	int x = Solution::strStr("Hello","ll");
+	int x = Solution::strStr("mississippi","mississippi");
 	cout << x << "\n";
 	return 0;
 }
