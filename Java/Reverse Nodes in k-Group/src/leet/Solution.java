@@ -19,6 +19,7 @@ public class Solution {
 		ListNode beforePair = newHead;
 		Stack<ListNode> toReverse = new Stack<>();
 		// O( n / k) * O(k +k) => O(2n)
+		// O(k) space
 		for (int i = 0 ; i < rounds ; i++) {
 			for (int j = k ; j > 0 ; j --) {
 				toReverse.push(temp);
