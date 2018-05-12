@@ -1,44 +1,32 @@
 # Leet Code Programming Challenges
-## Programming Language Cycle
-1. Python3
-2. Java
-3. C++
-4. Python2
-5. C
-6. Javascript
-7. C#
-8. Ruby
-
-***Language Used***, (problem number % 8) + 1 = Language Used, 1-18
-
-18 - 27 => JAVA
-
-
-## Current Problem
-24. Swap Nodes in Pairs       
-
 ## Completed Problems
-1. Two Sum 
-2. Add Two Numbers
-3.	Longest Substring Without Repeating Characters
-4.	Median of Two Sorted Arrays
-5.	Longest Palindromic Substring
-6. ZigZag Conversion 
-7.	Reverse Integer 	
-8.	String to Integer (atoi)
-9.	Palindrome Number 
-10. Regular Expression Matching 
-11. Container With Most Water 
-12. Integer to Roman
-13. Roman to Integer  
-14. Longest Common Prefix  
-15. 3Sum
-16. 3Sum Closest
-17. Letter Combinations of a Phone Number 
-18. 4Sum    
-19. Remove Nth Node From End of List    
-20. Valid Parentheses    		
-21.	Merge Two Sorted Lists    		
-22.	Generate Parentheses    		
-23.	Merge k Sorted Lists    		
-  
+| #   | Name                                            | Difficulty  | Language    |
+|-----|-------------------------------------------------|-------------|-------------|
+| 1.  | Two Sum                                         | Easy        | Python3     |
+| 2.  | Add Two Numbers                                 | Medium      | Java        |
+| 3.  |	Longest Substring Without Repeating Characters  | Medium      | C++         |
+| 4.  |	Median of Two Sorted Arrays                     | Hard        | Python2     |
+| 5.  |	Longest Palindromic Substring                   | Medium      | C           |
+| 6.  | ZigZag Conversion                               | Medium      | Javascript  |
+| 7.  |	Reverse Integer 	                              | Easy        | C#          |
+| 8.  |	String to Integer (atoi)                        | Medium      | Ruby        |
+| 9.  |	Palindrome Number                               | Easy        | Python 3    |
+| 10. | Regular Expression Matching                     | Hard        | Java        |
+| 11. | Container With Most Water                       | Medium      | C++         |
+| 12. | Integer to Roman                                | Medium      | Python2     |
+| 13. | Roman to Integer                                | Easy        | C           |
+| 14. | Longest Common Prefix                           | Easy        | Javascript  |
+| 15. | 3Sum                                            | Medium      | C#          |
+| 16. | 3Sum Closest                                    | Medium      | Ruby        |
+| 17. | Letter Combinations of a Phone Number           | Medium      | Python3     |
+| 18. | 4Sum                                            | Medium      | Java        |
+| 19. | Remove Nth Node From End of List                | Medium      | Java        |
+| 20. | Valid Parentheses    		                        | Easy        | Java        |
+| 21. |	Merge Two Sorted Lists    		                  | Easy        | Java        |
+| 22. |	Generate Parentheses    		                    | Medium      | Java        |
+| 23. |	Merge k Sorted Lists    		                    | Hard        | Java        |
+| 24. | Swap Nodes in Pairs                             | Medium      | Java        |
+| 25. |	Reverse Nodes in k-Group    	                  | Hard        | Java        |
+| 26. |	Remove Duplicatess from Sorted Array            | Easy        | Java        |
+| 27. |	Remove Element          		                    | Easy        | Java        |
+| 28. | Implement strStr()                              | Easy        |             |
