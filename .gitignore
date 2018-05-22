@@ -58,13 +58,24 @@
 *.zip
 *.tar.gz
 *.rar
+*.classpath
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+# Csharp
+*.csproj
+*.json
+*.props
+*.target
+*.cache
+*.AssemblyInfo.cs
+*.FileListAbsolute.txt
+
 # C
 # Prerequisites
 *.d
+*.prefs
 
 # Object files
 *.o
@@ -115,3 +126,11 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Javascript
+*.container
+*.jsdtscope
+*.name
+
+# Ruby
+*.buildpath
