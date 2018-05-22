@@ -28,11 +28,11 @@ public:
     		wordMap[word]++;
     	}
 		for(int windowStart=0; windowStart<wordLength; windowStart++){
-			unsigned int windowStartTemp = windowStart;
+			int windowStartTemp = windowStart;
 			map<string,int> tempMap;
 			int tempCount = 0;
 			// Slide the window of wordLength
-			for(unsigned int i=windowStart; i<s.size(); i+=wordLength){
+			for(int i=windowStart; i<length; i+=wordLength){
 				string str = s.substr(i, wordLength);
 				tempMap[str]++;
 				tempCount++;
