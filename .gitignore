@@ -17,6 +17,11 @@
 *.dylib
 *.dll
 
+# Misc
+*.cproject
+*.project
+*.xml
+
 # Fortran module files
 *.mod
 *.smod
