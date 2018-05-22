@@ -17,12 +17,12 @@ class Solution {
 public:
     static vector<int> findSubstring(string s, vector<string>& words) {
     	vector<int> res;
-    	int length = s.length();
-    	int wordCount = words.size();
-    	int wordLength = words[0].size();
-    	if (!length || !wordCount) {
+    	if(s=="" || words.size()==0) {
     		return res;
     	}
+		int length = s.length();
+		int wordCount = words.size();
+		int wordLength = words[0].size();
     	map<string,int> wordMap;
     	for(string word:words) {
     		wordMap[word]++;
@@ -62,7 +62,7 @@ int main() {
 	vector<string> words;
 	words.push_back("foo");
 	words.push_back("bar");
-	string s = "foobarthebarfoofooobar";
+	string s = "";
 	vector<int> ans = Solution::findSubstring(s,words);
 	for (auto a : ans) {
 		cout << a << "\n";
