@@ -1,4 +1,4 @@
-//============================================================================
+	//============================================================================
 // Name        : DivideTwoIntegers.cpp
 // Author      : Roger Kerr
 // Version     :
@@ -13,39 +13,48 @@ using namespace std;
 class Solution {
 public:
     static int divide(int dividend, int divisor) {
+    	if(divisor == 0 ||(dividend == INT_MIN && divisor == -1)) {
+			return INT_MAX;
+		}
+		else if(divisor == 1){
+			return dividend;
+		}
+		else if(divisor == dividend) {
+			return 1;
+		}
+    	int sign = (dividend > 0) ^ (divisor > 0);
+    	unsigned int top, bot;
     	int result = 0;
-    	int sign = 0;
     	if (dividend < 0) {
-    		sign++;
-    		dividend = 0 - dividend;
-    		if (dividend < 0) {
-    			return INT_MAX - 1;
-    		}
-    	}
-    	if (divisor < 0) {
-    		sign++;
-    		divisor = 0 - divisor;
-    	}
-    	int total = divisor;
-    	cout << (divisor << 1);
-    	while (total <= dividend) {
-    		total += divisor;
-    		result++;
-    		if (total < divisor) {
-    			return INT_MAX -1;
-    		}
-    	}
-    	if (sign != 1) {
-    		return result;
+    		top = 0 - dividend;
     	}
     	else {
+    		top = dividend;
+    	}
+    	if (divisor < 0) {
+			bot = 0 - divisor;
+			}
+		else {
+			bot = divisor;
+		}
+    	for (int i = 31; i >= 0 ; i--) {
+    		if((top>>i) >= bot) {
+    			result = (result<<1) | 1;
+    			top -= bot << i;
+    		}
+    		else {
+    			result <<= 1;
+    		}
+    	}
+    	if(sign) {
     		return 0 - result;
     	}
+    	return result;
     }
 };
 
 int main() {
-	int res = Solution::divide(-112,-12);
-	//cout << res << endl;
+	int res = Solution::divide(2147483647,-2);
+	cout << res << endl;
 	return 0;
 }
