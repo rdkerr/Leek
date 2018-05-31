@@ -13,29 +13,33 @@ using namespace std;
 class Solution {
 public:
     static int longestValidParentheses(string s) {
-    	if(s.length() < 2) {
-    		return 0;
-    	}
-    	int ret = 0;
-    	int length = s.length();
-    	stack<char> stck;
-    	for (int i = 0 ; i < length ; i ++) {
-    		if(s[i]==')') {
-    			if(!stck.empty()) {
-    				stck.pop();
-    				ret +=2;
-    			}
-    		}
-    		else {
-    			stck.push(')');
-    		}
-    	}
-        return ret;
+    	stack<int> ms;
+		ms.push(-1);
+		int length = s.size();
+		for(int i = 0; i < length ; i++) {
+			char ch = s[i];
+			if(ch == ')' && ms.top() >= 0 && s[ms.top()] == '(') {
+			ms.pop();
+			} else{
+				ms.push(i);
+			}
+		}
+		ms.push(s.size());
+		int maxLen = 0;
+		while(ms.size() > 1) {
+			int top = ms.top();
+			ms.pop();
+			int curLen = top - ms.top() - 1;
+			if (curLen > maxLen) {
+				maxLen = curLen;
+			}
+		}
+		return maxLen;
     }
 };
 
 int main() {
-	int ans = Solution::longestValidParentheses("(()");
-	cout << ans << endl; // prints !!!Hello World!!!
+	int ans = Solution::longestValidParentheses(")(()()()())))())");
+	cout << ans << endl;
 	return 0;
 }
