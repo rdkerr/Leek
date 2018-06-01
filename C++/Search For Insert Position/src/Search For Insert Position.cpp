@@ -13,7 +13,28 @@ using namespace std;
 class Solution {
 public:
     static int searchInsert(vector<int>& nums, int target) {
-        return 0;
+    	if(nums.empty()) {
+			return 0;
+		}
+		int front = 0;
+		int back = nums.size() - 1;
+		int srch;
+		while (front < back) {
+			srch = front + (back - front) / 2 ;
+			if (target < nums[srch]) {
+				back = srch;
+			}
+			else if (target > nums[srch]){
+				front = srch + 1;
+			}
+			else {
+				return srch;
+			}
+		}
+		if (front == nums.size() - 1 && nums[front] < target) {
+			return front + 1;
+		}
+		return front;
     }
 };
 
@@ -21,11 +42,9 @@ int main() {
 	vector<int> nums;
 	nums.push_back(1);
 	nums.push_back(3);
-	nums.push_back(7);
-	nums.push_back(8);
-	nums.push_back(8);
-	nums.push_back(10);
-	int target = 8;
+	nums.push_back(5);
+	nums.push_back(6);
+	int target = 7;
 	int ans = Solution::searchInsert(nums,target);
 	cout << ans << endl;
 	return 0;
