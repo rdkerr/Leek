@@ -47,8 +47,6 @@ public:
     	res.at(1)  = back;
     	return res;
     }
-
-
 };
 
 int main() {
