@@ -41,7 +41,10 @@ public:
     			return srch;
     		}
     	}
-    	if (nums[srch]==target) {
+    	if(front==back && nums[front]==target) {
+    		return front;
+    	}
+    	else if (nums[srch]==target) {
     		return srch;
     	}
         return -1;
