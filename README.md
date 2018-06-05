@@ -29,4 +29,13 @@
 | 25. |	Reverse Nodes in k-Group    	                  | Hard        | Java        |
 | 26. |	Remove Duplicatess from Sorted Array            | Easy        | Java        |
 | 27. |	Remove Element          		                    | Easy        | Java        |
-| 28. | Implement strStr()                              | Easy        |             |
+| 28. | Implement strStr()                              | Easy        | C++         |
+| 29. | Divide Two Integers  		                        | Medium      | C++         |
+| 30. |	Substring with Concatentation of All Words      | Hard        | C++         |
+| 31. |	Next Permutation        		                    | Medium      | C++         |
+| 32. |	Longest Valid Parentheses		                    | Hard        | C++         |
+| 33. | Search in Rotated Sorted Array                  | Medium      | C++         |
+| 34. |	Search for a Range          	                  | Medium      | C++         |
+| 35. |	Search Insert Position                          | Easy        | C++         |
+| 36. |	Valid Sudoku            		                    | Medium      | C++         |
+|     |                                                 |         |             |
