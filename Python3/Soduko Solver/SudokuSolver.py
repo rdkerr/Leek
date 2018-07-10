@@ -7,6 +7,7 @@
 #Empty cells are indicated by the character '.'.
 import time
 class Solution:
+    #O(N!) time, tries every possibility, similar to N-Queens
     def solveSudoku(self, board):
         """
         :type board: List[List[str]]
