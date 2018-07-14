@@ -26,13 +26,31 @@ class Solution:
         :type target: int
         :rtype: List[List[int]]
         """
-        return []
+        self.result = set()
+        self.candidates = candidates
+        self.target = target
+        self.search()
+        return list(result)
+
+    def sub(self, cand):
+        res =[]
+        self.back(res,[],cand,0)
+        return res
+    
+    def back(self, res, temp, cand, start):
+        res.append(list(temp))
+        print(res,temp,start)
+        for i in range(start,len(cand)):
+            temp.append(cand[i])
+            self.back(res,temp,cand,i+1)
+            temp.pop()
 
 def main():
     sol = Solution()
     candidates = [2,3,5]
     target = 8
-    print(sol.combinationSum(candidates,target))
+    print(sol.sub(candidates))
+    #print(sol.combinationSum(candidates,target))
        
 
 if __name__ == "__main__":
