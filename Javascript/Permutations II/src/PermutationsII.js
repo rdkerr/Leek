@@ -2,24 +2,29 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function(nums) {
+var permuteUnique = function(nums) {
 	var result = [];
-	backtrack(result,nums,[]);
+	nums.sort();
+	backtrack(result,nums,[],new Array(nums.length).fill(false));
     return result;
 };
 
-var backtrack = function(result, nums, temp) {
+var backtrack = function(result, nums, temp,used) {
 	if(temp.length==nums.length) {
 		result.push(temp.slice());
 	}
 	else {
 		for (var i = 0 ;  i < nums.length ; i ++) {
-			if(temp.indexOf(nums[i]) > -1) {
+			if(used[i] || i > 0 && nums[i] == nums[i-1] && !used[i - 1]){
 				continue;
 			}
 			temp.push(nums[i]);
-			backtrack(result,nums,temp);
+			used[i]=true;
+			backtrack(result,nums,temp,used);
 			temp.pop();
+			used[i]=false;
 		}
 	}
 };
+
+console.log(permuteUnique([1,1,2]));
