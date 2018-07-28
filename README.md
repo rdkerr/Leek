@@ -38,4 +38,19 @@
 | 34. |	Search for a Range          	                  | Medium      | C++         |
 | 35. |	Search Insert Position                          | Easy        | C++         |
 | 36. |	Valid Sudoku            		                    | Medium      | C++         |
-|     |                                                 |         |             |
+| 37. | Sudoku Solver                                   | Hard        | Python3     |
+| 38. | Count and Say                                   | Easy        | Python3     |
+| 39. | Combination Sum                                 | Medium      | Python3     |
+| 40. | Combination Sum II                              | Medium      | Python3     |
+| 41. | First Missing Positive                          | Hard        | Javascript  |
+| 42. | Trapping Rain Water                             | Hard        | Javascript  |
+| 43. | Multiply Strings                                | Medium      | Javascript  |
+| 44. | Wildcard Matching                               | Hard        | Javascript  |
+| 45. | Jump Game II                                    | Hard        | Javascript  |
+| 46. | Permutations                                    | Medium      | Javascript  |
+| 47. | Permutations II                                 | Medium      | Javascript  |
+| 48. | Rotate Image                                    | Medium      | Javascript  |
+| 49. | Group Anagrams                                  | Medium      | Javascript  |
+| 50. | Pow(x,n)                                        | Medium      | Javascript  |
+| 51. | N-Queens                                        | Hard        | Javascript  |
+| 52. | N-Queens II                                     | Hard        | Javascript  |
