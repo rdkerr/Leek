@@ -3,7 +3,7 @@
  * @return {number}
  */
 var totalNQueens = function(n) {
-var res = []
+	var res = []
     backtrack(0,res,[],n);
     var ans = [];
     for (var i = 0 ; i < res.length ; i ++) {
