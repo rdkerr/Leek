@@ -1,36 +1,36 @@
-import math
 class Solution:
     def spiralOrder(self, matrix):
         """
         :type matrix: List[List[int]]
         :rtype: List[int]
         """
-        m = len(matrix[0])
-        n = len(matrix)
-        row = 0
-        col = 0
-        for cycle in range(math.ceil(m/2)):
-        	#Go right
-        	for c in range(col,m):
-        		print(row,c)
-        		#print(matrix[row][c])
-        	print()
-        	m -= 1
-        	for r in range(row+1,n):
-        		print(r,m)
-        	n -= 1
-        	print(99,m,n)
-        	for c in range(m-1,col-1,-1):
-        		print(n,c)
-        	print(222222)
-        	for r in range(n-1,row,-1):
-        		print(r,col)
-        	row += 1
-        	col += 1
-        	#Go down
-        	#Go left
-        	#Go up
-        	print(1111111111111111)
+        if matrix == []:
+            return matrix
+        result = []
+        left = 0
+        right = len(matrix[0])-1
+        top = 0
+        bot = len(matrix)-1
+        total = len(matrix)*len(matrix[0])
+        for row in matrix:
+            print(row)
+        while len(result) < total:
+            for col in range(left,right+1):
+                result.append(matrix[top][col])
+            top += 1
+            for row in range(top,bot+1):
+                result.append(matrix[row][right])
+            right -= 1
+            if len(result) < total:
+                for col in range(right,left-1,-1):
+                    result.append(matrix[bot][col])
+                bot -= 1
+            if len(result) < total:
+                for row in range(bot,top-1,-1):
+                    result.append(matrix[row][left])
+                left += 1
+        return result
+        
         
         
 def main():
