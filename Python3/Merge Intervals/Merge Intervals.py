@@ -10,7 +10,19 @@ class Solution:
         :type intervals: List[Interval]
         :rtype: List[Interval]
         """
-        return []
+        if intervals == [] or len(intervals)==1:
+        	return intervals
+        # intervals.sort(key = lambda x: x.start)
+        start = intervals[0]
+        result = []
+        for i in range(1,len(intervals)):
+        	if intervals[i][0] <= start[1]:
+        		start[1] = max(intervals[i][1],start[1])
+        	else:
+        		result.append(start)
+        		start = intervals[i]
+        result.append(start)
+        return result
         
 def main():
     sol = Solution()
