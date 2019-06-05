@@ -20,6 +20,7 @@ var setZeroes = function(matrix) {
           matrix[i][result[k+1]] = 0;
       }
       ++k;
+      console.log('hk',matrix)
   }
 };
 
@@ -43,7 +44,14 @@ let output2 = [
   [0,4,5,0],
   [0,3,1,0]
 ];
-let input3 = [[1,1,1],[0,1,2]];
+let input3 = [
+  [1,1,1],
+  [0,1,2]
+];
+let output3 = [
+  [0,1,1],
+  [0,0,0]
+];
 
 setZeroes(input)
 console.log("TCL: input", input)
