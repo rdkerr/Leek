@@ -8,13 +8,14 @@ var combine = function(n, k) {
   let numbers = Array.from({length: n}, (_, i) => i + 1);
 
   var helper = function(current, remaining) {
+    console.log(current, remaining)
     if (current.length === k) {
       result.add(current.slice());
     } else {
       for (let i = 0; i < remaining.length; i++) {
         current.push(remaining[i]);
         let temp = remaining.slice();
-        temp.splice(i,1);
+        temp.splice(i);
         helper(current, temp);
         current.pop();
       }
