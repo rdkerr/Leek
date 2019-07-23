@@ -4,25 +4,21 @@
  * @return {number[][]}
  */
 var combine = function(n, k) {
-  let result = new Set();
-  let numbers = Array.from({length: n}, (_, i) => i + 1);
-
-  var helper = function(current, remaining) {
-    console.log(current, remaining)
+  let result = [];
+  var helper = function(current, start) {
     if (current.length === k) {
-      result.add(current.slice());
+      result.push(current.slice());
     } else {
-      for (let i = 0; i < remaining.length; i++) {
-        current.push(remaining[i]);
-        let temp = remaining.slice();
-        temp.splice(i);
-        helper(current, temp);
+      for (let i = start; i < n; i++) {
+        if (current.length < k - (n - i)) break;
+        current.push(i + 1);
+        helper(current, i + 1);
         current.pop();
       }
     }
   }
-  helper([], numbers);
-  return Array.from(result);
+  helper([], 0);
+  return result;
 };
 
 console.log(combine(4,2))
