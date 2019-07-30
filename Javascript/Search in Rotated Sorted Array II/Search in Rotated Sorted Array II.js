@@ -4,27 +4,42 @@
  * @return {boolean}
  */
 var search = function(nums, target) {
-  function searchHelper(begin, end) {
-    if (begin === end) return nums[begin] === target;
-    const mid = Math.floor((begin + end) / 2);
-    if (nums[mid] === target) {
-      return true;
-    } else if (target > nums[mid]) {
-      if (nums[end] <= nums[begin]) {
-        return searchHelper(begin, mid - 1);
+  if (nums.length === 0) return false;
+  if (nums.length === 1) return nums[0] === target ? true : false;
+  let start = 0;
+  let end = nums.length -1;
+  while (start <= end) {
+    const mid = parseInt((start+end)/2, 10);
+
+    const leftEl = nums[start];
+    const midEl = nums[mid];
+    const rightEl = nums[end];
+
+    if ([leftEl, midEl, rightEl].indexOf(target) > -1) return true;
+
+    if (rightEl > midEl) {
+      if (midEl < target && target < rightEl) {
+        start = mid + 1;
+        end--;
       } else {
-        return searchHelper(mid + 1, end);
+        end = mid - 1;
+        start++;
+      }
+    } else if (leftEl < midEl) {
+      if (leftEl < target && target < midEl) {
+        end = mid - 1;
+        start++;
+      } else {
+        start = mid + 1;
+        end--;
       }
     } else {
-        if (nums[end] <= nums[begin]) {
-          return searchHelper(mid + 1, end);
-        } else {
-          return searchHelper(begin, mid - 1);
-        }
+      start++;
+      end --;
     }
   }
-  return searchHelper(0, nums.length)
-};
+  return false;
+  }
 
 console.log(search([], 5))
 
