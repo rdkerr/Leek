@@ -15,24 +15,24 @@ function ListNode(val) {
   this.next = null;
 }
 
-var deleteDuplicates = function(head, current = undefined) {
-  if (!head) return;
+var deleteDuplicates = function(head) {
+  if (!head || !head.next) return head;
+  let newHead = new ListNode('head');
+  let pointer = newHead;
   let node = head;
-  let prev;
   while (node) {
-    if (!prev) {
-      prev = node;
-      node = node.next;
+    console.log(node);
+    if (node.next && node.val === node.next.val) {
+      let temp = node.val;
+      while (node && node.val === temp) node = node.next;
     } else {
-      if (prev.val === node.val) {
-        prev.next = node.next;
-        node = node.next;
-      } else {
-        prev = node;
-        node = node.next;
-      }
+      pointer.next = node;
+      pointer = pointer.next;
+      node = node.next;
     }
   }
+  pointer.next = null;
+  return newHead.next;
 };
 // 1->2->3->3->4->4->5
 let root = new ListNode(1);
@@ -50,7 +50,6 @@ temp.next = new ListNode(5);
 
 deleteDuplicates(root)
 let t = root;
-console.log('a',t);
 while (t!== null) {
   console.log('t',t.val);
   t = t.next;
